@@ -1,0 +1,10 @@
+<div class="logPanel">
+    <div class="form-bg">
+        <form id="myForm" ng-submit="loginSubmit()">
+            <h2>用户登陆</h2>
+            <input type="text" id="uname" placeholder="用户名" ng-model="user.uname" required>
+            <input type="password" id="psw" placeholder="密码" ng-model="user.psw" required>
+            <input id="loginBtn" class="subBtn" type="submit" value="" ng-disabled="myForm.$invalid"/>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+var ec=angular.module('energyController',[]);
+
+ec.controller('loginController',['$scope','$http','myValue','doLogin','myService','myConstant',
+    function loginCtl($scope,$http,myValue,doLogin,myService,myConstant){
+        console.log("login controller");
+
+        console.log(myValue);
+        console.log(doLogin);
+        console.log(myService.getKey);
+        console.log(myConstant);
+    }
+]);
+
+ea.controller('homeController',['$scope','$http','myValue','doLogin','myService','myConstant',
+    function homeController($scope,$http,myValue,doLogin,myService,myConstant){
+        console.log("home controller");
+
+        console.log(myValue);
+        console.log(doLogin);
+        console.log(myService.getKey);
+        console.log(myConstant);
+    }
+]);

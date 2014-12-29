@@ -1,0 +1,2 @@
+var energyApp=angular.module("energyPlatform",[]);
+energyApp.controller();

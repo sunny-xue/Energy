@@ -1,0 +1,16 @@
+var loginCtl=angular.module('loginCtl',[]);
+loginCtl.controller('loginCtl',['$scope','$http',
+    function($scope,$http){
+        $http({
+            method:'GET',
+            url:'/DHEMS/login',
+            params:{'loginName':$scope.user.uname,'password':$scope.user.psd,'methodName':'login'}
+        }).success(function(data, status, headers, config) {
+            console.log(data);
+        }).error(function(data, status, headers, config) {
+            console.log("error...");
+        });
+    }
+]);
+
+var homeCtl=angular.module('homeCtl',[])

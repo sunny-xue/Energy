@@ -1,0 +1,20 @@
+var energyApp=angular.module("energyPlatform",['ui.router']);
+
+energyApp.config(function($stateProvider, $urlRouterProvider){
+    $stateProvider.state('index',{
+        url:'/index',
+        templateUrl:'login.html',
+        controller:'loginCtl'
+    }).state('home',{
+        url:'/home',
+        templateUrl:'tmpls/views/home.html',
+        controller:'homeController'
+    });
+
+    $urlRouterProvider.otherwise('index');
+
+});
+
+energyApp.controller('loginContrller',function($scope){
+
+})

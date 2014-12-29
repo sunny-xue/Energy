@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .ng-cloak {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div ng-controller="MyController">
+    root scope count:{{count}}
+    <ul>
+        <li ng-repeat="i in [1]" ng-controller="MyController">
+            <button ng-click="$emit('MyEvent')">$emit("MyEvent")</button>
+            <button ng-click="$broadcast('MyEvent')">$broadcast("MyEvent")</button>
+            <br/>
+            middle scope count:{{count}}
+            <ul>
+                <li ng-repeat="item in [1,2]" ng-controller="MyController">
+                    Leaf scope count:{{count}}
+                </li>
+            </ul>
+        </li>
+    </ul></div>
+
+</body>
+
+<script src="../app/frameworks/angular/angular.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var myModule=angular.module('myModule',[]);
+    myModule.controller('MyController',['$scope',
+        function MyController($scope) {
+            $scope.count = 0;
+            $scope.$on("MyEvent", function() {
+                $scope.count++;
+            });
+    }]);
+
+</script>
+</html>
